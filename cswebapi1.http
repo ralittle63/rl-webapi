@@ -1,0 +1,15 @@
+@cswebapi1_HostAddress = http://localhost:5149
+
+GET {{cswebapi1_HostAddress}}/api/hello/
+Accept: application/json
+
+###
+
+POST {{cswebapi1_HostAddress}}/api/hello
+Content-Type: application/json
+
+{
+  "name": "Maximus Little"
+}
+
+###
