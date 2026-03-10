@@ -39,7 +39,7 @@ else
     }
     else
     {
-        app.MapGet("/swagger", () => Results.NotFound("Swagger UI is disabled in this environment."));
+        app.MapGet("/swagger/index.html", () => Results.NotFound("Swagger UI is disabled in this environment."));
     }
 }
 
