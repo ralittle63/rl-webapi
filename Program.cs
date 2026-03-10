@@ -26,11 +26,20 @@ else
     {
         app.MapOpenApi();
     }
+    else
+    {
+        app.MapGet("/openapi/v1.json", () => Results.NotFound(" is disabled in this environment."));
+    }
+    
     
     if (app.Configuration.GetValue<bool>("EnableSwagger") == true)
     {
         app.UseSwagger();
         app.UseSwaggerUI();
+    }
+    else
+    {
+        app.MapGet("/swagger", () => Results.NotFound("Swagger UI is disabled in this environment."));
     }
 }
 
