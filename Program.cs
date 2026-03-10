@@ -20,16 +20,19 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-else if (app.Configuration.GetValue<bool>("EnableOpenApi") == true)
+else
 {
-    app.MapOpenApi();
+    if (app.Configuration.GetValue<bool>("EnableOpenApi") == true)
+    {
+        app.MapOpenApi();
+    }
+    
+    if (app.Configuration.GetValue<bool>("EnableSwagger") == true)
+    {
+        app.UseSwagger();
+        app.UseSwaggerUI();
+    }
 }
-else if (app.Configuration.GetValue<bool>("EnableSwagger") == true)
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
-else {}
 
 app.UseHttpsRedirection();
 app.MapControllers();
