@@ -28,7 +28,7 @@ else
     }
     else
     {
-        app.MapGet("/openapi/v1.json", () => Results.NotFound(" is disabled in this environment."));
+        app.MapGet("/openapi/v1.json", () => Results.NotFound("OpenApi is disabled in this environment."));
     }
     
     
