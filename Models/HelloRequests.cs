@@ -1,4 +1,3 @@
-
 namespace cswebapi1.Models;
 
 public class HelloRequest
